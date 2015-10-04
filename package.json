@@ -1,0 +1,26 @@
+{
+  "name": "lucify-commons",
+  "version": "0.1.0",
+  "description": "Common styles and base components for other Lucify components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "lucify",
+    "react"
+  ],
+  "author": "Lucify",
+  "license": "ISC",
+  "dependencies": {
+    "babelify": "^6.3.0",
+    "minimatch": "^3.0.0",
+    "react-window-mixins": "0.0.6",
+    "through": "^2.3.8"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  }
+}

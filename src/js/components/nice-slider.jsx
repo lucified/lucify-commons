@@ -13,6 +13,14 @@ module.exports = React.createClass({
   //   }
   // },
 
+  getDefaultProps: function() {
+    return {
+      defaultValue: 0
+    }
+  },
+
+  
+
   componentDidMount: function() {
     var slider = React.findDOMNode(this.refs.slider);
 

@@ -12,6 +12,7 @@ var ContainerWidthMixin = {
     return {componentWidth: 0}
   },
 
+
   componentDidMount: function() {
     this.mounted = true;
     this.onResize();
@@ -19,6 +20,7 @@ var ContainerWidthMixin = {
 
 
   onResize: function() {
+
     if (this.mounted !== true) {
       return;
     }
@@ -29,7 +31,6 @@ var ContainerWidthMixin = {
       componentWidth: this.getDOMNode().clientWidth
     });
   },
-
 
 }
 

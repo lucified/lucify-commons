@@ -13,7 +13,9 @@
   "author": "Lucify",
   "license": "ISC",
   "dependencies": {
+    "accounting": "^0.4.1",
     "babelify": "^6.3.0",
+    "c3": "^0.4.10",
     "minimatch": "^3.0.0",
     "react-window-mixins": "0.0.6",
     "through": "^2.3.8"

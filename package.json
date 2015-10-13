@@ -16,7 +16,9 @@
     "accounting": "^0.4.1",
     "babelify": "^6.3.0",
     "c3": "^0.4.10",
+    "deepcopy": "^0.5.0",
     "minimatch": "^3.0.0",
+    "query-string": "^3.0.0",
     "react-window-mixins": "0.0.6",
     "through": "^2.3.8"
   },

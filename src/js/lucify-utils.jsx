@@ -30,6 +30,13 @@ var isMobile = {
 };
 
 
+var isSafari = function() {
+  return (navigator.userAgent.toLowerCase().indexOf('safari') != -1
+    && navigator.userAgent.toLowerCase().indexOf('chrome') == -1);
+}
+
+
+
 var getEnvironment = function() {
   var parsed = url.parse(window.location);
   if (parsed.host.indexOf('localhost') != -1) {
@@ -180,12 +187,12 @@ var log = function(payload) {
 }
 
 
-
 module.exports.log = log;
 module.exports.removeTrailingSlash = removeTrailingSlash;
 module.exports.detectIE = detectIE;
 module.exports.getEmbedBaseUrl = getEmbedBaseUrl;
 module.exports.isSlowDevice = isSlowDevice;
+module.exports.isSafari = isSafari;
 module.exports.getDelay = getDelay;
 module.exports.formatMoney = formatMoney;
 module.exports.formatEuro = formatEuro;

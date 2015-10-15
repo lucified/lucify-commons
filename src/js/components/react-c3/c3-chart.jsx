@@ -87,15 +87,12 @@ var C3Chart = React.createClass({
     d3.select(this.getDOMNode())
       .selectAll('.tick text')
         .style("font-size", this.props.ticksFontSize + "px");
-
-    //console.log("updated stypes, ticksFontSize is" + this.props.ticksFontSize);
   },
 
 
 
 
   getSize: function() {
-
     var baseWidth = Math.max(200, this.componentWidth);
 
     var ret = {

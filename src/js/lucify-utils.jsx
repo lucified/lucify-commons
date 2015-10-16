@@ -1,12 +1,10 @@
 
 var d3 = require('d3');
-
 var accounting = require('accounting');
 var url = require('url');
 var deepcopy = require('deepcopy');
-
 var queryString = require('query-string');
-//var detectMobileBrowser = require('detect-mobile-browser');
+
 
 var isMobile = {
     Android: function() {
@@ -74,6 +72,7 @@ var isSlowDevice = function() {
 
 
 // from http://stackoverflow.com/questions/19999388/jquery-check-if-user-is-using-ie/21712356#21712356
+// note that this does not work for IE mobile, at least version 11
 var detectIE = function() {
   var ua = window.navigator.userAgent;
 
@@ -188,6 +187,7 @@ var log = function(payload) {
 
 
 module.exports.log = log;
+module.exports.isMobile = isMobile;
 module.exports.removeTrailingSlash = removeTrailingSlash;
 module.exports.detectIE = detectIE;
 module.exports.getEmbedBaseUrl = getEmbedBaseUrl;

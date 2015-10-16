@@ -14,6 +14,7 @@ var SoccerFields = React.createClass({
 				style={{
 					boxSizing: "content-box",
 					width: this.getSoccerFieldWidth(),
+					height: this.getSoccerFieldHeight(),
 					paddingLeft: this.getSoccerFieldPadding(),
 					paddingRight: this.getSoccerFieldPadding()
 				}}
@@ -33,6 +34,8 @@ var SoccerFields = React.createClass({
 	},
 
 
+
+
 	getWidth: function() {
 		return this.props.width;
 	},
@@ -45,6 +48,10 @@ var SoccerFields = React.createClass({
 
 	getSoccerFieldWidth: function() {
 		return this.getFullFieldWidth() * 0.9;
+	},
+
+	getSoccerFieldHeight: function() {
+		return this.getSoccerFieldWidth() * 95 / 141.031;
 	},
 
 

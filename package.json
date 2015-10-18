@@ -16,6 +16,7 @@
     "accounting": "^0.4.1",
     "babelify": "^6.3.0",
     "c3": "^0.4.10",
+    "classnames": "^2.1.5",
     "deepcopy": "^0.5.0",
     "minimatch": "^3.0.0",
     "query-string": "^3.0.0",

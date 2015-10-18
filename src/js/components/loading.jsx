@@ -2,9 +2,6 @@
 var React = require('react');
 var d3 = require('d3');
 
-var ReactLoading = require('react-loading');
-
-
 var Loading = React.createClass({
 
 

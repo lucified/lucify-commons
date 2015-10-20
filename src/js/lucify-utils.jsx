@@ -5,6 +5,8 @@ var url = require('url');
 var deepcopy = require('deepcopy');
 var queryString = require('query-string');
 
+var createHash = require('sha.js');
+
 
 var isMobile = {
     Android: function() {
@@ -36,12 +38,15 @@ var isSafari = function() {
 
 
 var getEnvironment = function() {
-  var parsed = url.parse(window.location);
-  if (parsed.host.indexOf('localhost') != -1) {
+  var host = window.location.host;
+  if (host.indexOf('localhost') == 0
+    || host.indexOf('192.168.') == 0
+    || host.indexOf('172.16.') == 0
+    || host.indexOf('10.') == 0) {
     return 'local';
   }
 
-  if (parsed.host.indexOf('www.lucify.com') != -1) {
+  if (host.indexOf('www.lucify.com') != -1) {
     return 'prod';
   }
 
@@ -186,6 +191,13 @@ var log = function(payload) {
 }
 
 
+var sha512 = function(str) {
+  var sha512 = createHash('sha512');
+  return sha512.update(str, 'utf8').digest('hex');
+}
+
+module.exports.getEnvironment = getEnvironment;
+module.exports.sha512 = sha512;
 module.exports.log = log;
 module.exports.isMobile = isMobile;
 module.exports.removeTrailingSlash = removeTrailingSlash;

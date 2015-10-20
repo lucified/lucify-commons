@@ -56,7 +56,7 @@ var SoccerFields = React.createClass({
 
 
 	getRowFieldCount: function() {
-		return Math.max(4, Math.floor(this.props.width / 150));
+		return Math.max(7, Math.floor(this.props.width / 100));
 	},
 
 

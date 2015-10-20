@@ -21,6 +21,7 @@
     "minimatch": "^3.0.0",
     "query-string": "^3.0.0",
     "react-window-mixins": "0.0.6",
+    "sha.js": "^2.4.4",
     "through": "^2.3.8"
   },
   "browserify": {

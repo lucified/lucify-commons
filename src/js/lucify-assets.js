@@ -1,5 +1,4 @@
 
-
 var asset = function(id) {
   if (window.lucifyAssetManifest != null
     && window.lucifyAssetManifest[id] != null) {
@@ -8,20 +7,23 @@ var asset = function(id) {
   return id;
 }
 
-var possibleGzipPrefix = function() {
-  if (window.gzipEnabled) {
-    return ".gz";
-  }
-  return "";
+var getAssetPath = function() {
+	if (window.lucifyAssetPath != null) {
+		return window.lucifyAssetPath
+	}
+	return "";
 }
 
+var getPrefix = function() {
+	return "/" + getAssetPath();
+}
 
 var img = function(id) {
-  return "/images/" + asset(id) + possibleGzipPrefix();
+  return getPrefix() + "images/" + asset(id);
 }
 
 var data = function(id) {
-  return "/data-assets/" + asset(id) + possibleGzipPrefix();
+  return getPrefix() + "data/" + asset(id);
 }
 
 

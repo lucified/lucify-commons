@@ -2,6 +2,8 @@
 var React = require('react');
 var d3 = require('d3');
 
+var assets = require('../lucify-assets.js');
+
 var Loading = React.createClass({
 
 
@@ -25,7 +27,7 @@ var Loading = React.createClass({
 			<div className="loading">
 
 				 <div className="loading__img">
-				 	<img src="images/loading-spinner.gif" />
+				 	<img src={assets.img('loading-spinner.gif')} />
 				 </div>
 				 <div className="loading__text">Loading... {this.getPercentage()}</div>
 			</div>

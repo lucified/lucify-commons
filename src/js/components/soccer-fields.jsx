@@ -3,6 +3,7 @@ var React = require('react');
 var _ = require('underscore');
 
 var ResponsiveDecorator = require('lucify-commons/src/js/decorators/responsive-decorator.jsx');
+var assets = require('../lucify-assets.js');
 
 
 var SoccerFields = React.createClass({
@@ -18,7 +19,7 @@ var SoccerFields = React.createClass({
 					paddingLeft: this.getSoccerFieldPadding(),
 					paddingRight: this.getSoccerFieldPadding()
 				}}
-				key={index} src='images/soccer-field.svg' />
+				key={index} src={assets.img('soccer-field.svg')} />
 		}.bind(this));
 
 		return (

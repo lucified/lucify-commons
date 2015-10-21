@@ -11,7 +11,11 @@
     "react"
   ],
   "author": "Lucify",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/lucify/lucify-commons.git"
+  },
+  "license": "MIT",
   "dependencies": {
     "accounting": "^0.4.1",
     "babelify": "^6.3.0",

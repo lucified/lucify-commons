@@ -23,6 +23,7 @@
     "classnames": "^2.1.5",
     "deepcopy": "^0.5.0",
     "minimatch": "^3.0.0",
+    "object-extend": "^0.5.0",
     "query-string": "^3.0.0",
     "react-window-mixins": "0.0.6",
     "sha.js": "^2.4.4",

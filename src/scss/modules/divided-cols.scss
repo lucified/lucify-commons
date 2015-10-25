@@ -26,6 +26,10 @@
   vertical-align: top;
 }
 
+.divided-cols--narrow__parent {
+  @extend .divided-cols__parent;
+}
+
 
 .divided-cols--narrow__first {
   @extend .divided-cols__first;

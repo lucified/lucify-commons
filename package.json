@@ -13,7 +13,7 @@
   "author": "Lucify",
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/lucify/lucify-commons.git"
+    "url": "git+https://github.com/lucified/lucify-commons.git"
   },
   "license": "MIT",
   "dependencies": {

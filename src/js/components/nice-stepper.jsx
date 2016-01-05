@@ -1,11 +1,6 @@
 
 var React = require('react');
-var mui = require('material-ui');
 var _ = require('underscore');
-
-var FlatButton = mui.FlatButton;
-var Tabs = mui.Tabs;
-var Tab = mui.Tab;
 
 var NiceButton = require('./nice-button.jsx');
 
@@ -39,22 +34,22 @@ var NiceStepper = React.createClass({
   },
 
 
-  render: function(){    
+  render: function(){
 
     return (
       <table className="nice-stepper" style={{"width": "auto"}}>
         <tr>
           <td className="nice-stepper__prev">
-            <NiceButton 
+            <NiceButton
               className="nice-stepper__button"
-              disabled={this.props.step == 1} 
+              disabled={this.props.step == 1}
               onClick={this.handlePrev}>
               Edellinen
             </NiceButton>
           </td>
           {this.getStepNumbers()}
           <td className="nice-stepper__next">
-            <NiceButton 
+            <NiceButton
               className="nice-stepper__button"
               disabled={this.props.step == this.props.max}
               onClick={this.handleNext}>
@@ -64,8 +59,8 @@ var NiceStepper = React.createClass({
         </tr>
       </table>
     );
-    
-  }    
+
+  }
 
 });
 

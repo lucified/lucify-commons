@@ -1,6 +1,6 @@
 {
   "name": "lucify-commons",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Common styles and base components for other Lucify components",
   "main": "index.js",
   "scripts": {

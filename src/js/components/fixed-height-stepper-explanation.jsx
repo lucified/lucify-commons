@@ -1,7 +1,7 @@
 
 var React = require('react');
-
 var OnResize = require('react-window-mixins').OnResize;
+var d3 = require('d3');
 
 
 module.exports = React.createClass({
@@ -19,13 +19,12 @@ module.exports = React.createClass({
 
   getHeight: function() {
     var ret = 0;
-  
+
     d3.select(this.getDOMNode())
       .selectAll(".content")
       .each(function() {
-        window.t = this;
         ret = Math.max(this.getBoundingClientRect().height, ret);
-      });   
+      });
     return ret;
   },
 
@@ -44,7 +43,7 @@ module.exports = React.createClass({
     this.updateHeight();
   },
 
-  
+
   getContent: function(step) {
     var style = {
       opacity: step == this.props.currentStep ? 1 : 0
@@ -56,7 +55,7 @@ module.exports = React.createClass({
         </div>
       );
   },
- 
+
 
   getAllContent: function() {
     return this.props.children.map(function(val, i) {

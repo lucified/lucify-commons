@@ -13,7 +13,7 @@ module.exports = React.createClass({
   getInitialState: function() {
     return {
       height: 10
-    }
+    };
   },
 
 
@@ -47,7 +47,7 @@ module.exports = React.createClass({
   getContent: function(step) {
     var style = {
       opacity: step == this.props.currentStep ? 1 : 0
-    }
+    };
 
     return (
         <div key={step} className="content" style={style}>

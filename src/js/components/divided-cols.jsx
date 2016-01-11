@@ -16,8 +16,8 @@ var DividedCols = React.createClass({
         breakPointStacked: 700,
         breakPointNarrow: 800,
         inverse: false,
-        alignmentClass: "top-xs",
-      }
+        alignmentClass: "top-xs"
+      };
     },
 
 
@@ -76,28 +76,3 @@ var DividedCols = React.createClass({
 
 
 module.exports = DividedCols;
-
-
-      // if (this.componentWidth < this.props.breakPoint) {
-      //   return (
-      //     <div className="divided-cols--stacked">
-      //       <div className="divided-cols--stacked__first">
-      //         {this.props.first}
-      //       </div>
-      //       <div className="divided-cols--stacked__second">
-      //         {this.props.second}
-      //       </div>
-      //     </div>
-      //   );
-      // }
-
-      // return (
-      //     <div className="divided-cols">
-      //       <div className="divided-cols__first">
-      //         {this.props.first}
-      //       </div>
-      //       <div className="divided-cols__second">
-      //         {this.props.second}
-      //       </div>
-      //     </div>
-      // );

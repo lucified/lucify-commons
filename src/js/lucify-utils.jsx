@@ -33,7 +33,7 @@ var isMobile = {
 var isSafari = function() {
   return (navigator.userAgent.toLowerCase().indexOf('safari') != -1
     && navigator.userAgent.toLowerCase().indexOf('chrome') == -1);
-}
+};
 
 
 
@@ -50,14 +50,14 @@ var getEnvironment = function() {
     return 'prod';
   }
 
-  return "staging";  
-}
+  return "staging";
+};
 
 
 var getEmbedBaseUrl = function() {
   var parsed = url.parse(window.location.href);
   return parsed.protocol + "//" + parsed.host + "/embed/";
-}
+};
 
 
 var isSlowDevice = function() {
@@ -73,7 +73,7 @@ var isSlowDevice = function() {
   }
 
   return false;
-}
+};
 
 
 // from http://stackoverflow.com/questions/19999388/jquery-check-if-user-is-using-ie/21712356#21712356
@@ -102,7 +102,7 @@ var detectIE = function() {
 
   // other browser
   return false;
-}
+};
 
 
 
@@ -113,15 +113,15 @@ var getDelay = function() {
   for (var i = 0; i < arguments.length; i++) {
     var intVal = arguments[i] ? 1 : 0;
     ret += intVal;
-  };
+  }
 
   return ret * 500;
 
   // reduce does not work for the arguments object
-  // var trueCount = arguments.reduce(function(curr, arg) {      
-  //   return curr + intVal; 
+  // var trueCount = arguments.reduce(function(curr, arg) {
+  //   return curr + intVal;
   // }, 0);
-}
+};
 
 
 function decimalPlaces(num) {
@@ -144,7 +144,7 @@ var formatMoneyToPrecision = function(amount, precision) {
       {accounting.formatMoney(value, "", decimalPlaces(value), " ", ",") + " "}
     </span>
   );
-}
+};
 
 
 var formatMoney = function(amount, decimals) {
@@ -157,7 +157,7 @@ var formatMoney = function(amount, decimals) {
       {accounting.formatMoney(amount, "", decimals, " ", ",") + " "}
     </span>
   );
-}
+};
 
 
 var formatEuro = function(amount, decimals) {
@@ -167,34 +167,34 @@ var formatEuro = function(amount, decimals) {
       {' '}
       &euro;
     </span>
-  )
-}
+  );
+};
 
 
 var removeTrailingSlash = function(path) {
   var p = path + "";
   return p.replace(/\/$/, "");
-}
+};
 
 
 
 var log = function(payload) {
   var copy = deepcopy(payload);
   copy._href = location.href;
-  copy._referrer = document.referrer;  
+  copy._referrer = document.referrer;
 
   var url = 'https://tm-prod.appspot.com/api/log?' + queryString.stringify(copy);
   d3.xhr(url)
     .post(null, function(error, response) {
       // console.log("here");
     });
-}
+};
 
 
 var sha512 = function(str) {
   var sha512 = createHash('sha512');
   return sha512.update(str, 'utf8').digest('hex');
-}
+};
 
 module.exports.getEnvironment = getEnvironment;
 module.exports.sha512 = sha512;

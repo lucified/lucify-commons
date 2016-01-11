@@ -68,7 +68,7 @@ var ScrollThenFix = React.createClass({
       right: "0px",
       left: "0px",
       zIndex: "200"
-    }
+    };
   },
 
 
@@ -76,7 +76,7 @@ var ScrollThenFix = React.createClass({
     return {
       display: this.scrolledOverTop() ? "block" : "none",
       height: this.state.height
-    }
+    };
   },
 
 
@@ -88,8 +88,7 @@ var ScrollThenFix = React.createClass({
         </div>
         <div style={this.getPlaceHolderStyle()} />
       </div>
-    )
-
+    );
   }
 
 

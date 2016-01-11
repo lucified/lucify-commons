@@ -27,18 +27,12 @@ module.exports.cyanToGreen6= [
 ];
 
 module.exports.cyanToGreen8 = [
-  '#18B7B7', 
-  '#46C5C5', 
-  '#8CDBDB', 
-  '#BAEAEA', 
+  '#18B7B7',
+  '#46C5C5',
+  '#8CDBDB',
+  '#BAEAEA',
   '#EFF9F1',
   '#CFEDD5',
   '#9FDBAA',
   '#60C472'
 ];
-
-
-
-
-//module.exports.grayBackground = '#f1f1f2';
-

@@ -4,7 +4,6 @@ var React = require('react');
 var FormRow = React.createClass({
 
 
-  
   getInput: function() {
     if (this.props.value) {
       return (
@@ -16,7 +15,7 @@ var FormRow = React.createClass({
               {this.props.value}
             </div>
           </div>
-      )
+      );
     }
     return this.props.input;
   },

@@ -17,7 +17,7 @@ var ChartWithExplanation = React.createClass({
     return <DividedCols
       first={this.props.children[0]}
       second={this.props.children[1]}
-      inverse={true} />
+      inverse={true} />;
   },
 
 
@@ -35,10 +35,10 @@ var ChartWithExplanation = React.createClass({
 
   render: function() {
 
-   
+
       return (
-          <HideableContainer 
-          visible={this.props.visible} 
+          <HideableContainer
+          visible={this.props.visible}
           delay={this.props.delay}
           removeFromDOM={true}>
           <div className={this.getClassName()}>

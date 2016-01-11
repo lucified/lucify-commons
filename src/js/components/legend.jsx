@@ -1,5 +1,4 @@
 
-
 var React = require('react');
 var _ = require('underscore');
 var classNames = require('classnames');
@@ -13,7 +12,7 @@ var Legend = React.createClass({
       reverse: false,
       itemsPerRow: 1,
       grid: true
-    }
+    };
   },
 
 
@@ -21,7 +20,7 @@ var Legend = React.createClass({
 
     var style = {
       backgroundColor: color
-    }
+    };
 
     var colWidth = Math.floor(12 / this.props.itemsPerRow);
     var c = "col-xs-" + colWidth;
@@ -40,7 +39,7 @@ var Legend = React.createClass({
         </table>
       </div>
     );
-  
+
   },
 
 
@@ -66,7 +65,7 @@ var Legend = React.createClass({
           {this.getLegendItems()}
         </div>
       </div>
-    )
+    );
   }
 
 

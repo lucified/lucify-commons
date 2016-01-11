@@ -10,6 +10,6 @@ var StepperParent = {
     this.setState({step: value});
   }
 
-}
+};
 
 module.exports = StepperParent;

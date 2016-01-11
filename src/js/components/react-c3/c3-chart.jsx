@@ -11,24 +11,24 @@ var ComponentWidthMixin = require('../container-width-mixin.js');
 
 
 var C3Chart = React.createClass({
-  
+
 
   mixins: [ComponentWidthMixin],
 
-  
+
   getDefaultProps: function(){
     return {
       slowUpdateDebounceTime: 1000,
       fastUpdateDebounceTime: 5,
-      
+
       slowResizeDebounceTime: 1000,
       fastResizeDebounceTime: 500,
-      
+
       lineStrokeWidth: null,
       aspectRatio: 1.3, // aspectRatio = width / height
       ticksFontSize: 13,
       yTicksSpacing: 5,
-    }
+    };
   },
 
 
@@ -36,9 +36,9 @@ var C3Chart = React.createClass({
     if (this.getUpdateDebounceTime() > 0) {
       this.scheduleUpdateData();
     } else {
-      this.updateData();  
+      this.updateData();
     }
-    
+
     this.scheduleResize();
   },
 
@@ -46,13 +46,12 @@ var C3Chart = React.createClass({
   updateData: function() {
     if (!this.destroyed) {
       try {
-        this.chart.load(this.props.data);  
+        this.chart.load(this.props.data);
       } catch (err) {
         console.log("catched error at chart.load " + err);
         window.c3err = err;
       }
     }
-    ///this.updateStyles();
   },
 
 
@@ -69,7 +68,7 @@ var C3Chart = React.createClass({
 
 
   updateStyles: function() {
-    if (this.props.lineStrokeWidth) { 
+    if (this.props.lineStrokeWidth) {
       d3.select(this.getDOMNode())
         .selectAll('.c3-line')
         .style('stroke-width', this.props.lineStrokeWidth);
@@ -83,7 +82,7 @@ var C3Chart = React.createClass({
         .selectAll('.c3-axis-x .tick text tspan')
         .attr("y", this.props.ticksFontSize);
     }
-    
+
     d3.select(this.getDOMNode())
       .selectAll('.tick text')
         .style("font-size", this.props.ticksFontSize + "px");
@@ -98,7 +97,7 @@ var C3Chart = React.createClass({
     var ret = {
       width: baseWidth,
       height: baseWidth / this.props.aspectRatio
-    }
+    };
 
     if (this.props.width) {
       ret.width = this.props.width;
@@ -168,7 +167,7 @@ var C3Chart = React.createClass({
       <div className="c3-chart">
         <div ref="chart" />
       </div>
-    )
+    );
   }
 
 

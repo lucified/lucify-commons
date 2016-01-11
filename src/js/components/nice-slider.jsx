@@ -5,21 +5,14 @@ var noUiSlider = require('./nouislider.js');
 
 
 module.exports = React.createClass({
-  
-  // handleChange: function() {
-  //   var value = parseInt(React.findDOMNode(this.refs.slider).value);
-  //   if (this.props.onChange) {
-  //     this.props.onChange(value);
-  //   }
-  // },
+
 
   getDefaultProps: function() {
     return {
       defaultValue: 0
-    }
+    };
   },
 
-  
 
   componentDidMount: function() {
     var slider = React.findDOMNode(this.refs.slider);
@@ -40,11 +33,10 @@ module.exports = React.createClass({
 
     slider.noUiSlider.on('update', function() {
       var value = Math.round(slider.noUiSlider.get());
-      
+
       if (this.props.onChange) {
         this.props.onChange(value);
       }
-      //console.log("update to" + value);
     }.bind(this));
   },
 

@@ -11,7 +11,7 @@ var SoccerFields = React.createClass({
 	getSoccerFields: function(count) {
 
 		var imgs = _.range(0, count).map(function(index) {
-			return <img 
+			return <img
 				style={{
 					boxSizing: "content-box",
 					width: this.getSoccerFieldWidth(),
@@ -19,7 +19,7 @@ var SoccerFields = React.createClass({
 					paddingLeft: this.getSoccerFieldPadding(),
 					paddingRight: this.getSoccerFieldPadding()
 				}}
-				key={index} src={assets.img('soccer-field.svg')} />
+				key={index} src={assets.img('soccer-field.svg')} />;
 		}.bind(this));
 
 		return (
@@ -75,5 +75,3 @@ var SoccerFields = React.createClass({
 
 
 module.exports = ResponsiveDecorator(SoccerFields);
-
-

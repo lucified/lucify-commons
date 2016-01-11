@@ -1,5 +1,4 @@
 
-
 var React = require('react');
 var SexTabs = require('./sex-tabs.jsx');
 var bindToSexLoopContext = require('./bind-to-sex-loop-context.jsx');
@@ -18,8 +17,8 @@ module.exports = function(Component, minWidth) {
                <SexTabs onChange={this.props.onSexSelectionChange} />
                <Component {...this.props} sex={this.props.sex} />
              </div>
-          )
-        };
+          );
+        }
 
         return (
           <div>

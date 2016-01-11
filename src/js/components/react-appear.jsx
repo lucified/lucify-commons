@@ -35,23 +35,7 @@ var Appear = React.createClass({
 
 
   render: function() {
-
     return <div />;
-
-    // var visText = this.topIsVisible() ? "true" : "false";
-
-    // return (
-    //   <div>
-    //     <ul>
-    //       <li>offsetTop: {this.state.offsetTop}</li>
-    //       <li>scroll.y: {this.state.scroll.y}</li>
-    //       <li>window.height: {this.state.window.height}</li>
-    //       <li>distance: {this.getDistance()}</li>
-    //       <li>topIsVisible: {visText}</li>
-
-    //     </ul>
-    //   </div>
-    // );
   }
 
 });

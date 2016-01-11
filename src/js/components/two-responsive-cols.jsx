@@ -1,5 +1,4 @@
 
-
 var React = require('react');
 var OnResize = require("react-window-mixins").OnResize;
 
@@ -11,7 +10,7 @@ var TwoResponsiveCols = React.createClass({
 
 
     getInitialState: function() {
-      return {componentWidth: 0}
+      return {componentWidth: 0};
     },
 
 
@@ -21,7 +20,7 @@ var TwoResponsiveCols = React.createClass({
         inverse: false,
         gapClass: "two-responsive-cols__gap",
         alignmentClass: "top-xs",
-      }
+      };
     },
 
 
@@ -37,7 +36,7 @@ var TwoResponsiveCols = React.createClass({
 
     getPossibleGap: function() {
       if (this.state.componentWidth < this.props.breakPoint) {
-        return <div className={this.props.gapClass}>&nbsp;</div>
+        return <div className={this.props.gapClass}>&nbsp;</div>;
       }
       return null;
     },
@@ -45,9 +44,9 @@ var TwoResponsiveCols = React.createClass({
 
 
     getContents: function() {
-      var colClass = this.state.componentWidth < this.props.breakPoint ? 
+      var colClass = this.state.componentWidth < this.props.breakPoint ?
         "col-xs-12" : "col-xs-6";
-      
+
       return (
         <div className={"row " +  this.props.alignmentClass}>
             <div className={colClass + " two-responsive-cols__first"}>
@@ -58,7 +57,7 @@ var TwoResponsiveCols = React.createClass({
               {this.props.second}
             </div>
         </div>
-      )
+      );
     },
 
     render: function() {

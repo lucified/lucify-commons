@@ -9,7 +9,7 @@ module.exports = React.createClass({
   getInitialState: function() {
     return {
       index: 1
-    }
+    };
   },
 
   onChange: function(index) {
@@ -33,33 +33,32 @@ module.exports = React.createClass({
 
 
   render: function() {
-    
+
     var style = {
         backgroundColor: "transparent",
         borderBottom: "1px solid transparent",
         maxHeight: 12
-    }
+    };
 
     var tabStyle = {
       color: "black",
       textAlign: "left",
       height: 24
-    }
+    };
 
     return (
         <div className="sex-tabs">
           <div>
-              <Tabs onAfterChange={this.onChange} tabActive={this.state.index}> 
+              <Tabs onAfterChange={this.onChange} tabActive={this.state.index}>
                 <Tabs.Panel title="Kaikki"><div /></Tabs.Panel>
                 <Tabs.Panel title="Naiset"><div /></Tabs.Panel>
                 <Tabs.Panel title="Miehet"><div /></Tabs.Panel>
                 <Tabs.Panel title="Looppi"><div /></Tabs.Panel>
-              </Tabs> 
+              </Tabs>
           </div>
         </div>
-    )
+    );
   }
 
 
 });
-

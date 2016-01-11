@@ -20,7 +20,7 @@ var NiceStepper = React.createClass({
 
   getStepNumber: function(index){
     if (index == this.props.step) {
-      return <td className="nice-stepper__current-number" key={index}>{index}</td>
+      return <td className="nice-stepper__current-number" key={index}>{index}</td>;
     } else {
       return <td className="nice-stepper__number" key={index}>{index}</td>;
     }
@@ -65,5 +65,3 @@ var NiceStepper = React.createClass({
 });
 
 module.exports = NiceStepper;
-
-//onMouseDown={this.handlePrev}

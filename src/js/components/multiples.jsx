@@ -1,5 +1,4 @@
 
-
 var React = require('react');
 var Hider = require('./element-query-hider.jsx');
 
@@ -14,7 +13,7 @@ module.exports = function(ChartComponent, SmallChartComponent) {
       return {
         largeCols: 4,
         mediumCols: 6
-      }
+      };
     },
 
 
@@ -26,7 +25,7 @@ module.exports = function(ChartComponent, SmallChartComponent) {
               <ChartComponent {...this.props} {...item.chartProps} />
             </div>
           </div>
-      )
+      );
     },
 
     renderItemForMedium: function(item, index) {
@@ -37,7 +36,7 @@ module.exports = function(ChartComponent, SmallChartComponent) {
               <ChartComponent {...this.props} {...item.chartProps} />
             </div>
           </div>
-      )
+      );
     },
 
 
@@ -47,7 +46,7 @@ module.exports = function(ChartComponent, SmallChartComponent) {
           <div className="multiples__title">{item.title}</div>
           <SmallChartComponent {...this.props} {...item.chartProps} />
         </div>
-      )
+      );
     },
 
 
@@ -76,10 +75,10 @@ module.exports = function(ChartComponent, SmallChartComponent) {
                 {this.renderItems(this.renderItemForSmall)}
               </div>
           </Hider>
-        </div>  
-      )
+        </div>
+      );
     }
 
   });
 
-}
+};

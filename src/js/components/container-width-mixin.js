@@ -9,7 +9,7 @@ var ContainerWidthMixin = {
 
 
   getInitialState: function() {
-    return {componentWidth: 0}
+    return {componentWidth: 0};
   },
 
 
@@ -26,12 +26,12 @@ var ContainerWidthMixin = {
     }
 
     this.componentWidth = this.getDOMNode().clientWidth;
-    
+
     this.setState({
       componentWidth: this.getDOMNode().clientWidth
     });
-  },
+  }
 
-}
+};
 
 module.exports = ContainerWidthMixin;

@@ -8,7 +8,7 @@ module.exports = React.createClass({
   getInitialState: function() {
     return {
       opened: false
-    }
+    };
   },
 
 
@@ -23,7 +23,7 @@ module.exports = React.createClass({
       return (
         <a onClick={this.onClick}>{this.props.initial}</a>
       );
-    
+
     } else {
       return <span>{this.props.children}</span>;
     }

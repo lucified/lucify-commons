@@ -10,9 +10,8 @@ module.exports = React.createClass({
 
     return <Link to={this.props.to}>
         <span className="nice-button">{this.props.children}</span>
-      </Link>
+      </Link>;
 
   }
 
 });
-

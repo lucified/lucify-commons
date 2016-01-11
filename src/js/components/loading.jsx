@@ -10,7 +10,7 @@ var Loading = React.createClass({
 	getDefaultProps: function() {
 		return {
 			progress: null
-		}
+		};
 	},
 
 
@@ -20,7 +20,7 @@ var Loading = React.createClass({
 		}
 		return <span className="loading__percentage">({this.props.progress} %)</span>;
 	},
-	
+
 
 	render: function() {
 		return (
@@ -31,13 +31,10 @@ var Loading = React.createClass({
 				 </div>
 				 <div className="loading__text">Loading... {this.getPercentage()}</div>
 			</div>
-		)
+		);
 	}
 
 });
 
 
 module.exports = Loading;
-
-
-//<ReactLoading type='bars' color='#e3e3e3' />

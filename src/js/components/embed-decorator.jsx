@@ -13,7 +13,7 @@ var EmbedDecorator = function(Component) {
         embed: true,
         containerClass: "container-embed",
         muiTheme: ThemeManager.getCurrentTheme()
-      }
+      };
     },
 
     childContextTypes: {
@@ -27,7 +27,7 @@ var EmbedDecorator = function(Component) {
         <div className="embed-decorator">
           <Component {...this.props} />
         </div>
-      )
+      );
     }
   });
 };

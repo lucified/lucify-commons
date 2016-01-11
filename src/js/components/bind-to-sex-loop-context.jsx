@@ -20,7 +20,7 @@ module.exports = function(Component) {
       if (sel != 'l') {
         clearInterval(this.interval);
       }
-      
+
       if (sel == 'l') {
         this.setState({sex: 'f'});
         this.startLoop();
@@ -52,11 +52,11 @@ module.exports = function(Component) {
 
 
     render: function() {
-      return <Component {...this.props} sex={this.state.sex} 
-        onSexSelectionChange={this.onSexSelectionChange} />
+      return <Component {...this.props} sex={this.state.sex}
+        onSexSelectionChange={this.onSexSelectionChange} />;
     }
 
   });
 
-}
+};
 

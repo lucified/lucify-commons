@@ -15,7 +15,7 @@ var debounceTime = function(slowDeviceTime, fastDeviceTime) {
   var ret = utils.isSlowDevice() ? slowDeviceTime : fastDeviceTime;
   //console.log("debounceTime is " + ret);
   return ret;
-}
+};
 
 
 module.exports = debounceTime;

@@ -13,19 +13,19 @@ var UberProtection = function(Component, hash) {
 		getDefaultProps: function() {
 			return {
 				hash: hash
-			}
+			};
 		},
 
 		getInitialState: function() {
 			return {
 				failedAttempt: false,
 				passed: false,
-			}
+			};
 		},
 
 
 		getInputPasswordHash: function() {
-			var s = React.findDOMNode(this.refs.passwordField).value;			
+			var s = React.findDOMNode(this.refs.passwordField).value;
 			return utils.sha512(s);
 		},
 
@@ -61,8 +61,8 @@ var UberProtection = function(Component, hash) {
 
 		render: function() {
 			if (this.accessGranted()) {
-				return <Component {...this.props} />
-			};
+				return <Component {...this.props} />;
+			}
 
 			return (
 				<div className="uber-protection">

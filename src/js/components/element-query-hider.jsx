@@ -1,5 +1,3 @@
-
-
 var React = require('react');
 var ComponentWidthMixin = require('./container-width-mixin.js');
 
@@ -13,7 +11,7 @@ module.exports = React.createClass({
     return {
       minWidth: null,
       maxWidth: null
-    }
+    };
   },
 
 
@@ -33,7 +31,7 @@ module.exports = React.createClass({
   getChildren: function() {
     if (!this.componentWidth || !this.match()) {
       return <span />;
-    }    
+    }
     return this.props.children;
   },
 
@@ -44,9 +42,6 @@ module.exports = React.createClass({
         {this.getChildren()}
       </div>
     );
-
   }
 
-
 });
-

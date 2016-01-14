@@ -26,28 +26,28 @@ var uid = shortid.generate();
 
 var getIFrameEmbedCodeWithInlineResize = function(baseUrl, embedUrl) {
   var id = getIFrameId();
-  var embedUrl = getEmbedUrl(baseUrl, embedUrl);
-  return getEmbedCodeIFrame(id, embedUrl) + getEmbedCodeResizeScript(id);
+  var url = getEmbedUrl(baseUrl, embedUrl);
+  return getEmbedCodeIFrame(id, url) + getEmbedCodeResizeScript(id);
 }
 
 var getIFrameEmbedCodeWithRemoteResize = function(baseUrl, embedUrl) {
   var id = getIFrameId();
-  var embedUrl = getEmbedUrl(baseUrl, embedUrl);
-  return getEmbedCodeIFrame(id, embedUrl) + getEmbedCodeRemoteResizeScript(baseUrl, id);
+  var url = getEmbedUrl(baseUrl, embedUrl);
+  return getEmbedCodeIFrame(id, url) + getEmbedCodeRemoteResizeScript(baseUrl, id);
 }
 
 
 var getScriptTagEmbedCode = function(baseUrl, embedUrl) {
-  var url = baseUrl + "embed.js";
-  var embedUrl = getEmbedUrl(baseUrl, embedUrl);
+  var embedScriptUrl = baseUrl + "embed.js";
+  var url = getEmbedUrl(baseUrl, embedUrl);
 
   var id = getIFrameId();
 
   // first the script tag with src for embed.js
-  var ret = sprintf('<script id="%s" src="%s"></script>', id, url);
+  var ret = sprintf('<script id="%s" src="%s"></script>', id, embedScriptUrl);
 
   // then call function to bootstrap embed
-  ret += sprintf('<script>lucifyEmbed("%s", "%s")</script>', id, embedUrl);
+  ret += sprintf('<script>lucifyEmbed("%s", "%s")</script>', id, url);
   return ret;
 }
 

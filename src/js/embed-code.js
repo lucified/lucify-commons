@@ -4,37 +4,67 @@ var sprintf = require('sprintf');
 
 var uid = shortid.generate();
 
+
 // Public API
 // ----------
 
-var getIFrameEmbedCodeWithInlineResize = function(baseUrl) {
+
+//
+// All the three different functions for retrieving embed codes
+// have the same params
+//
+// baseUrl  -- baseUrl for the folder containing embed assets,
+//             like embed.js and resize.js. Normally also contains
+//             the index.html that bootstraps the embed
+//
+// embedUrl -- For multi-variant embeds, the same embed.js and resize.js
+//             is shared for multiple embeds. in this case embedUrl is different
+//             from baseUrl. This applies for example to all legacy lucify.com embeds
+//             In case the url to the embeds index.html is different from the baseUrl,
+//             this parameter should be used
+
+
+var getIFrameEmbedCodeWithInlineResize = function(baseUrl, embedUrl) {
   var id = getIFrameId();
-  return getEmbedCodeIFrame(id, baseUrl) + getEmbedCodeResizeScript(id);
+  var url = getEmbedUrl(baseUrl, embedUrl);
+  return getEmbedCodeIFrame(id, url) + getEmbedCodeResizeScript(id);
+};
+
+var getIFrameEmbedCodeWithRemoteResize = function(baseUrl, embedUrl) {
+  var id = getIFrameId();
+  var url = getEmbedUrl(baseUrl, embedUrl);
+  return getEmbedCodeIFrame(id, url) + getEmbedCodeRemoteResizeScript(baseUrl, id);
 };
 
 
-var getIFrameEmbedCodeWithRemoteResize = function(baseUrl) {
-  var id = getIFrameId();
-  return getEmbedCodeIFrame(id, baseUrl) + getEmbedCodeRemoteResizeScript(baseUrl, id);
-};
-
-
-var getScriptTagEmbedCode = function(baseUrl) {
-  var url = baseUrl + "embed.js";
+var getScriptTagEmbedCode = function(baseUrl, embedUrl) {
+  var embedScriptUrl = baseUrl + "embed.js";
+  var url = getEmbedUrl(baseUrl, embedUrl);
 
   var id = getIFrameId();
 
   // first the script tag with src for embed.js
-  var ret = sprintf('<script id="%s" src="%s"></script>', id, url);
+  var ret = sprintf('<script id="%s" src="%s"></script>', id, embedScriptUrl);
 
   // then call function to bootstrap embed
-  ret += sprintf('<script>lucifyEmbed("%s", "%s")</script>', id, baseUrl);
+  ret += sprintf('<script>lucifyEmbed("%s", "%s")</script>', id, url);
   return ret;
 };
 
 
+
+
+
 // Private functions
 // -----------------
+
+var getEmbedUrl = function(baseUrl, embedUrl) {
+  if (!embedUrl) {
+      return baseUrl;
+  }
+  return embedUrl;
+};
+
 
 var getIFrameId = function() {
   return "lucify-" + uid;
@@ -43,7 +73,7 @@ var getIFrameId = function() {
 
 var getEmbedCodeIFrame = function(id, src) {
   return sprintf("<iframe id='%s' src='%s' width='100%%' scrolling='no' frameborder='0'></iframe>",
-    getIFrameId(), src);
+    id, src);
 };
 
 

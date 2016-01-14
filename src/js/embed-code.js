@@ -73,7 +73,7 @@ var getIFrameId = function() {
 
 var getEmbedCodeIFrame = function(id, src) {
   return sprintf("<iframe id='%s' src='%s' width='100%%' scrolling='no' frameborder='0'></iframe>",
-    getIFrameId(), src);
+    id, src);
 }
 
 

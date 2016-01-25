@@ -2,6 +2,7 @@
   "name": "lucify-commons",
   "version": "0.2.3",
   "description": "Common styles and base components for other Lucify components",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

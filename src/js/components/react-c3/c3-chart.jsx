@@ -47,6 +47,9 @@ var C3Chart = React.createClass({
     if (!this.destroyed) {
       try {
         this.chart.load(this.props.data);
+        if (this.props.onUpdateData) {
+            this.props.onUpdateData();
+        }
       } catch (err) {
         console.log("catched error at chart.load " + err);
         window.c3err = err;

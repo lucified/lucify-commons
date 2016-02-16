@@ -20,6 +20,7 @@
   "license": "MIT",
   "dependencies": {
     "accounting": "^0.4.1",
+    "babelify": "^6.3.0",
     "c3": "^0.4.10",
     "classnames": "^2.1.5",
     "d3": "^3.5.12",
@@ -41,5 +42,10 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
     "mocha": "^2.4.5"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
   }
 }

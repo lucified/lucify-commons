@@ -4,7 +4,9 @@
   "description": "Common styles and base components for other Lucify components",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha",
+    "compile": "babel --presets es2015,stage-0,react -d lib/ src/",
+    "prepublish": "npm run compile"
   },
   "keywords": [
     "lucify",
@@ -33,6 +35,13 @@
     "sprintf": "^0.1.5",
     "through": "^2.3.8",
     "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.5.1",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "mocha": "^2.4.5"
   },
   "browserify": {
     "transform": [

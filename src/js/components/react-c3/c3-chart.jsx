@@ -1,6 +1,7 @@
 
 var React = require('react');
 var c3 = require('c3');
+var d3 = require('d3');
 
 var deepcopy = require('deepcopy');
 var debounceTime = require('../../debounce-time.jsx');

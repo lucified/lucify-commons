@@ -31,6 +31,7 @@ var UberProtection = function(Component, hash) {
 
 
     getInputPasswordHash: function() {
+      // TODO: use ReactDOM once we upgrade to React 0.14
       var s = React.findDOMNode(this.refs.passwordField).value;
       return utils.sha512(s);
     },

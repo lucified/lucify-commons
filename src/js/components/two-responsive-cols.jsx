@@ -41,6 +41,7 @@ var TwoResponsiveCols = React.createClass({
       return;
     }
     this.setState({
+      // TODO: use ReactDOM once we upgrade to React 0.14
       componentWidth: React.findDOMNode(this).clientWidth
     });
   },

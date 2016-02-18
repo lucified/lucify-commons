@@ -158,6 +158,7 @@ var C3Chart = React.createClass({
 
   componentDidMount: function() {
     var fullSpec = deepcopy(this.props.spec);
+    // TODO: use ReactDOM once we upgrade to React 0.14
     fullSpec.bindto = React.findDOMNode(this.refs.chart);
     fullSpec.data = this.props.data;
     fullSpec.size = this.getSize();

@@ -64,6 +64,7 @@ module.exports = React.createClass({
 
 
   getAllContent: function() {
+    // TODO: use React.Children.map
     return this.props.children.map(function(val, i) {
       return this.getContent(i + 1);
     }.bind(this));

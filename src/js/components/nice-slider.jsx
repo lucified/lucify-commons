@@ -25,6 +25,7 @@ module.exports = React.createClass({
 
 
   componentDidMount: function() {
+    // TODO: use ReactDOM once we upgrade to React 0.14
     var slider = React.findDOMNode(this.refs.slider);
 
     var settings = {

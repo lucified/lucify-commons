@@ -17,6 +17,7 @@ var Appear = React.createClass({
 
   componentDidMount: function() {
     this.appeared = false;
+    // Setting state in componentDidMount not recommended. will trigger rerender
     this.setState({offsetTop: this.getDOMNode().offsetTop});
   },
 

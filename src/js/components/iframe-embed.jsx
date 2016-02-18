@@ -13,6 +13,7 @@ var IFrameEmbed = React.createClass({
 
 
   componentDidMount: function() {
+    // TODO: use ReactDOM once we upgrade to React 0.14
     iFrameResize({log: false}, React.findDOMNode(this.refs.iframe));
   },
 

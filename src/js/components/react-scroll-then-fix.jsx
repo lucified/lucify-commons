@@ -16,6 +16,7 @@ var ScrollThenFix = React.createClass({
 
 
   componentDidMount: function() {
+    // Setting state in componentDidMount not recommended. will trigger rerender
     this.setState({
       offsetTop: this.getDOMNode().offsetTop,
       height: this.getDOMNode().getBoundingClientRect().height
@@ -44,6 +45,7 @@ var ScrollThenFix = React.createClass({
     this.setState({
       offsetTop: node.offsetTop,
       scrollY: window.pageYOffset,
+      // TODO: use ReactDOM once we upgrade to React 0.14
       height: React.findDOMNode(this.refs.main).getBoundingClientRect().height
     });
   },

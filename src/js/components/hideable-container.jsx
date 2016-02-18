@@ -43,6 +43,7 @@ var HideableContainer = React.createClass({
 
 
   componentDidMount: function(){
+    // Setting state in componentDidMount not recommended. will trigger rerender
     this.setState({visible: this.props.visible});
   },
 

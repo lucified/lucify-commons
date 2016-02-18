@@ -45,7 +45,7 @@ var C3Chart = React.createClass({
       lineStrokeWidth: null,
       aspectRatio: 1.3, // aspectRatio = width / height
       ticksFontSize: 13,
-      yTicksSpacing: 5,
+      yTicksSpacing: 5
     };
   },
 
@@ -66,11 +66,10 @@ var C3Chart = React.createClass({
       try {
         this.chart.load(this.props.data);
         if (this.props.onUpdateData) {
-            this.props.onUpdateData();
+          this.props.onUpdateData();
         }
       } catch (err) {
-        console.log("catched error at chart.load " + err);
-        window.c3err = err;
+        console.log("caught error at chart.load", err);
       }
     }
   },
@@ -81,8 +80,7 @@ var C3Chart = React.createClass({
       try {
         this.chart.resize(this.getSize());
       } catch (err) {
-        console.log("catched error at chart.resize " + err);
-        window.c3err = err;
+        console.log("caught error at chart.resize ", err);
       }
     }
   },
@@ -96,17 +94,17 @@ var C3Chart = React.createClass({
     }
 
     d3.select(this.getDOMNode())
-      .select('.c3-axis-x').style("stroke-width", "1.5px");
+      .select('.c3-axis-x').style('stroke-width', '1.5px');
 
     if (!this.props.spec.axis || !this.props.spec.axis.rotated) {
       d3.select(this.getDOMNode())
         .selectAll('.c3-axis-x .tick text tspan')
-        .attr("y", this.props.ticksFontSize);
+        .attr('y', this.props.ticksFontSize);
     }
 
     d3.select(this.getDOMNode())
       .selectAll('.tick text')
-        .style("font-size", this.props.ticksFontSize + "px");
+        .style('font-size', this.props.ticksFontSize + 'px');
   },
 
 
@@ -168,8 +166,8 @@ var C3Chart = React.createClass({
     this.chart = c3.generate(fullSpec);
 
     this.scheduleResize = _.debounce(function() {
-        this.resizeChart();
-      }, this.getResizeDebounceTime());
+      this.resizeChart();
+    }, this.getResizeDebounceTime());
 
     this.scheduleUpdateData = _.debounce(function() {
       this.updateData();
@@ -190,7 +188,6 @@ var C3Chart = React.createClass({
       </div>
     );
   }
-
 
 });
 

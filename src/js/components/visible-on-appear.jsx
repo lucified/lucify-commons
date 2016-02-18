@@ -15,16 +15,19 @@ var VisibleOnAppear = React.createClass({
 
 
   getDefaultProps: function() {
-    return {invisibleHeight: 0};
+    return {
+      invisibleHeight: 0
+    };
   },
 
   getInitialState: function() {
-    return {visible: false};
+    return {
+      visible: false
+    };
   },
 
   onAppear: function() {
     this.setState({visible: true});
-    //console.log("on appear");
   },
 
 

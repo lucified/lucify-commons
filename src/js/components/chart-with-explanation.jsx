@@ -29,29 +29,27 @@ var ChartWithExplanation = React.createClass({
 
   getClassName: function() {
     if (this.componentWidth < 700) {
-      return "chart-with-explanation--stacked";
+      return 'chart-with-explanation--stacked';
     }
 
     if (this.componentWidth < 800) {
-      return "chart-with-explanation--narrow";
+      return 'chart-with-explanation--narrow';
     }
 
-    return "chart-with-explanation";
+    return 'chart-with-explanation';
   },
 
   render: function() {
-
-
-      return (
-          <HideableContainer
-          visible={this.props.visible}
-          delay={this.props.delay}
-          removeFromDOM={true}>
-          <div className={this.getClassName()}>
-            {this.getContents()}
-          </div>
-        </HideableContainer>
-      );
+    return (
+      <HideableContainer
+        visible={this.props.visible}
+        delay={this.props.delay}
+        removeFromDOM={true}>
+        <div className={this.getClassName()}>
+          {this.getContents()}
+        </div>
+      </HideableContainer>
+    );
   }
 
 });

@@ -33,15 +33,14 @@ var Legend = React.createClass({
     };
 
     var colWidth = Math.floor(12 / this.props.itemsPerRow);
-    var c = "col-xs-" + colWidth;
 
     var classes = classNames(
-      c, {'nice-legend__no-grid': !this.props.grid}
+      'col-xs-' + colWidth, {'nice-legend__no-grid': !this.props.grid}
     );
 
     return (
       <div key={index} className={classes}>
-        <table className="nice-legend" style={{"width": "auto"}}>
+        <table className="nice-legend" style={{'width': 'auto'}}>
           <tr>
             <td><div className="nice-legend-box" style={style} /></td>
             <td><div className="nice-legend-text">{text}</div></td>
@@ -67,7 +66,7 @@ var Legend = React.createClass({
 
 
   render: function() {
-    var c = this.props.vertical ? "" : "row middle-xs";
+    var c = this.props.vertical ? '' : 'row middle-xs';
 
     return (
       <div className="legend">

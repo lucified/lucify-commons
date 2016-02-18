@@ -12,12 +12,13 @@ module.exports = React.createClass({
     to: React.PropTypes.string
   },
 
+
   render: function() {
-
-    return <Link to={this.props.to}>
+    return (
+      <Link to={this.props.to}>
         <span className="nice-button">{this.props.children}</span>
-      </Link>;
-
+      </Link>
+    );
   }
 
 });

@@ -14,7 +14,7 @@ var EmbedDecorator = function(Component) {
     getChildContext: function(){
       return {
         embed: true,
-        containerClass: "container-embed",
+        containerClass: 'container-embed',
         muiTheme: ThemeManager.getCurrentTheme()
       };
     },

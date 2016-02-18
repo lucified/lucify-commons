@@ -1,13 +1,13 @@
 
 var React = require('react');
-var OnResize = require("react-window-mixins").OnResize;
+var OnResize = require('react-window-mixins').OnResize;
 
 
 var ContainerWidthMixin = {
 
   displayName: 'ContainerWidthMixin',
 
-  mixins: [ OnResize ],
+  mixins: [OnResize],
 
 
   getInitialState: function() {
@@ -22,7 +22,6 @@ var ContainerWidthMixin = {
 
 
   onResize: function() {
-
     if (this.mounted !== true) {
       return;
     }

@@ -26,7 +26,7 @@ module.exports = function(ChartComponent, SmallChartComponent) {
 
     renderItemForLarge: function(item, index) {
       return (
-          <div key={index} className={"col-xs-" + this.props.largeCols}>
+          <div key={index} className={'col-xs-' + this.props.largeCols}>
             <div className="multiples__large-item">
               <div className="multiples__title">{item.title}</div>
               <ChartComponent {...this.props} {...item.chartProps} />
@@ -35,9 +35,10 @@ module.exports = function(ChartComponent, SmallChartComponent) {
       );
     },
 
+
     renderItemForMedium: function(item, index) {
       return (
-          <div key={index} className={"col-xs-" + this.props.mediumCols}>
+          <div key={index} className={'col-xs-' + this.props.mediumCols}>
             <div className="multiples__medium-item">
               <div className="multiples__title">{item.title}</div>
               <ChartComponent {...this.props} {...item.chartProps} />
@@ -59,7 +60,7 @@ module.exports = function(ChartComponent, SmallChartComponent) {
 
     renderItems: function(renderer) {
       return this.props.spec.map(function(item, index) {
-          return renderer(item, index);
+        return renderer(item, index);
       });
     },
 
@@ -78,9 +79,9 @@ module.exports = function(ChartComponent, SmallChartComponent) {
             </div>
           </Hider>
           <Hider maxWidth={550}>
-              <div className="multiples__small">
-                {this.renderItems(this.renderItemForSmall)}
-              </div>
+            <div className="multiples__small">
+              {this.renderItems(this.renderItemForSmall)}
+            </div>
           </Hider>
         </div>
       );

@@ -12,22 +12,18 @@ var ScrollThenFix = React.createClass({
 
 
   componentWillUnmount: function() {
-    window.removeEventListener("scroll", this.onScroll);
-  },
-
-
-  getInitialState: function() {
-    return {};
+    window.removeEventListener('scroll', this.onScroll);
   },
 
 
   componentDidMount: function() {
-    this.setState(
-        {offsetTop: this.getDOMNode().offsetTop,
-         height: this.getDOMNode().getBoundingClientRect().height});
+    this.setState({
+      offsetTop: this.getDOMNode().offsetTop,
+      height: this.getDOMNode().getBoundingClientRect().height
+    });
 
     this.onScroll();
-    window.addEventListener("scroll", this.onScroll);
+    window.addEventListener('scroll', this.onScroll);
   },
 
 
@@ -46,10 +42,11 @@ var ScrollThenFix = React.createClass({
       return;
     }
 
-    this.setState(
-      {offsetTop: node.offsetTop,
-       scrollY: window.pageYOffset,
-       height: React.findDOMNode(this.refs.main).getBoundingClientRect().height});
+    this.setState({
+      offsetTop: node.offsetTop,
+      scrollY: window.pageYOffset,
+      height: React.findDOMNode(this.refs.main).getBoundingClientRect().height
+    });
   },
 
 
@@ -57,26 +54,25 @@ var ScrollThenFix = React.createClass({
     if (!this.state.offsetTop || !this.state.scrollY) {
       return false;
     }
-    //console.log("offsetTop s: " + this.state.offsetTop);
-    //console.log("scrollY: " + this.state.scrollY);
+
     return this.state.scrollY > this.state.offsetTop;
   },
 
 
   getMainDivStyle: function() {
     return {
-      position: this.scrolledOverTop() ? "fixed" : "static",
-      top: "0px",
-      right: "0px",
-      left: "0px",
-      zIndex: "200"
+      position: this.scrolledOverTop() ? 'fixed' : 'static',
+      top: '0px',
+      right: '0px',
+      left: '0px',
+      zIndex: '200'
     };
   },
 
 
   getPlaceHolderStyle: function() {
     return {
-      display: this.scrolledOverTop() ? "block" : "none",
+      display: this.scrolledOverTop() ? 'block' : 'none',
       height: this.state.height
     };
   },
@@ -93,9 +89,7 @@ var ScrollThenFix = React.createClass({
     );
   }
 
-
 });
-
 
 
 module.exports = ScrollThenFix;

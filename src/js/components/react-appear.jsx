@@ -1,7 +1,7 @@
 
 var React = require('react');
 var OnScroll = require('react-window-mixins').OnScroll;
-var OnResize = require("react-window-mixins").OnResize;
+var OnResize = require('react-window-mixins').OnResize;
 
 
 var Appear = React.createClass({
@@ -23,10 +23,10 @@ var Appear = React.createClass({
 
   componentDidUpdate: function() {
     if (!this.appeared && this.topIsVisible()) {
-        this.appeared = true;
-        if (this.props.onAppear) {
-          this.props.onAppear();
-        }
+      this.appeared = true;
+      if (this.props.onAppear) {
+        this.props.onAppear();
+      }
     }
   },
 

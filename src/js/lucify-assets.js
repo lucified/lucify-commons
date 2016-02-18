@@ -8,22 +8,22 @@ var asset = function(id) {
 };
 
 var getAssetPath = function() {
-	if (window.lucifyAssetPath != null) {
-		return window.lucifyAssetPath;
-	}
-	return "";
+  if (window.lucifyAssetPath != null) {
+    return window.lucifyAssetPath;
+  }
+  return '';
 };
 
 var getPrefix = function() {
-	return "/" + getAssetPath();
+  return '/' + getAssetPath();
 };
 
 var img = function(id) {
-  return getPrefix() + "images/" + asset(id);
+  return getPrefix() + 'images/' + asset(id);
 };
 
 var data = function(id) {
-  return getPrefix() + "data/" + asset(id);
+  return getPrefix() + 'data/' + asset(id);
 };
 
 

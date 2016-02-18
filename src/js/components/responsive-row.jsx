@@ -13,7 +13,7 @@ var ResponsiveRow = React.createClass({
   renderChildren: function () {
     return React.Children.map(this.props.children, function (child) {
       return React.addons.cloneWithProps(child, {
-          rowWidth : this.clientWidth
+        rowWidth: this.clientWidth
       });
     }.bind(this));
   },
@@ -22,6 +22,5 @@ var ResponsiveRow = React.createClass({
   render: function() {
     return <div>{this.renderChildren()}</div>;
   }
-
 
 });

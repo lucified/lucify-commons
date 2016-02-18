@@ -26,10 +26,11 @@ module.exports = React.createClass({
     var ret = 0;
 
     d3.select(this.getDOMNode())
-      .selectAll(".content")
+      .selectAll('.content')
       .each(function() {
         ret = Math.max(this.getBoundingClientRect().height, ret);
       });
+
     return ret;
   },
 
@@ -55,10 +56,10 @@ module.exports = React.createClass({
     };
 
     return (
-        <div key={step} className="content" style={style}>
-          {this.props.children[step - 1]}
-        </div>
-      );
+      <div key={step} className="content" style={style}>
+        {this.props.children[step - 1]}
+      </div>
+    );
   },
 
 
@@ -76,6 +77,5 @@ module.exports = React.createClass({
       </div>
     );
   }
-
 
 });

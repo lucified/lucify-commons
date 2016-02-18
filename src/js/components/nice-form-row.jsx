@@ -9,14 +9,14 @@ var FormRow = React.createClass({
   getInput: function() {
     if (this.props.value) {
       return (
-          <div className="nice-form-row__input-inner">
-            <div className="nice-form-row__input-main">
-              {this.props.input}
-            </div>
-            <div className="nice-form-row__input-value">
-              {this.props.value}
-            </div>
+        <div className="nice-form-row__input-inner">
+          <div className="nice-form-row__input-main">
+            {this.props.input}
           </div>
+          <div className="nice-form-row__input-value">
+            {this.props.value}
+          </div>
+        </div>
       );
     }
     return this.props.input;

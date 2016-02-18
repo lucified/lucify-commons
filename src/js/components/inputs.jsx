@@ -7,13 +7,13 @@ var Inputs = React.createClass({
   displayName: 'Inputs',
 
 
-	render: function() {
-		return (
-			<div className="inputs">
-				{this.props.children}
-			</div>
-		);
-	}
+  render: function() {
+    return (
+      <div className="inputs">
+        {this.props.children}
+      </div>
+    );
+  }
 
 });
 

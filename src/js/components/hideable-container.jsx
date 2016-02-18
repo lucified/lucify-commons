@@ -35,10 +35,10 @@ var HideableContainer = React.createClass({
 
   componentWillReceiveProps: function(newProps){
     if (newProps.visible != this.props.visible) {
-       setTimeout(function() {
-         this.setState({visible: newProps.visible});
-       }.bind(this), this.props.delay);
-     }
+      setTimeout(function() {
+        this.setState({visible: newProps.visible});
+      }.bind(this), this.props.delay);
+    }
   },
 
 
@@ -50,7 +50,9 @@ var HideableContainer = React.createClass({
   getClasses: function(){
     return classNames(
       'hideable-container',
-      {'hideable-container-visible': this.state.visible}
+      {
+        'hideable-container-visible': this.state.visible
+      }
     );
   },
 
@@ -65,8 +67,8 @@ var HideableContainer = React.createClass({
 
   getStyle: function(){
     return {
-      display: (this.props.displayNone && !this.props.visible) ? "none" : "block",
-      height: (this.props.heightZero && !this.props.visible) ? "0" : "auto"
+      display: (this.props.displayNone && !this.props.visible) ? 'none' : 'block',
+      height: (this.props.heightZero && !this.props.visible) ? '0' : 'auto'
     };
   },
 
@@ -75,7 +77,6 @@ var HideableContainer = React.createClass({
     return <div style={this.getStyle()}
       className={this.getClasses()}>{this.getContent()}</div>;
   }
-
 
 });
 

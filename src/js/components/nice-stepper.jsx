@@ -46,7 +46,7 @@ var NiceStepper = React.createClass({
   render: function(){
 
     return (
-      <table className="nice-stepper" style={{"width": "auto"}}>
+      <table className="nice-stepper" style={{'width': 'auto'}}>
         <tr>
           <td className="nice-stepper__prev">
             <NiceButton

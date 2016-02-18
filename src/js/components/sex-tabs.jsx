@@ -21,7 +21,6 @@ module.exports = React.createClass({
   onChange: function(index) {
     this.setState({index: index});
     if (this.props.onChange) {
-      //console.log(this.getPos(index));
       this.props.onChange(this.getPos(index));
     }
   },
@@ -53,18 +52,17 @@ module.exports = React.createClass({
     };
 
     return (
-        <div className="sex-tabs">
-          <div>
-              <Tabs onAfterChange={this.onChange} tabActive={this.state.index}>
-                <Tabs.Panel title="Kaikki"><div /></Tabs.Panel>
-                <Tabs.Panel title="Naiset"><div /></Tabs.Panel>
-                <Tabs.Panel title="Miehet"><div /></Tabs.Panel>
-                <Tabs.Panel title="Looppi"><div /></Tabs.Panel>
-              </Tabs>
-          </div>
+      <div className="sex-tabs">
+        <div>
+          <Tabs onAfterChange={this.onChange} tabActive={this.state.index}>
+            <Tabs.Panel title="Kaikki"><div /></Tabs.Panel>
+            <Tabs.Panel title="Naiset"><div /></Tabs.Panel>
+            <Tabs.Panel title="Miehet"><div /></Tabs.Panel>
+            <Tabs.Panel title="Looppi"><div /></Tabs.Panel>
+          </Tabs>
         </div>
+      </div>
     );
   }
-
 
 });

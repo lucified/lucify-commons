@@ -17,13 +17,13 @@ var IFrameEmbed = React.createClass({
   },
 
   render: function() {
-      return (
-         <div style={{lineHeight: 0}}>
-            <iframe ref="iframe" id={this.iframeId} src={this.props.src}
-                    width="100%" scrolling="no" frameBorder={0} />
-         </div>
-      );
-   }
+    return (
+     <div style={{lineHeight: 0}}>
+      <iframe ref="iframe" id={this.iframeId} src={this.props.src}
+              width="100%" scrolling="no" frameBorder={0} />
+     </div>
+    );
+  }
 
 });
 

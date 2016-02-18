@@ -4,13 +4,16 @@ var React = require('react');
 
 var Inputs = React.createClass({
 
-	render: function() {
-		return (
-			<div className="inputs">
-				{this.props.children}
-			</div>
-		);
-	}
+  displayName: 'Inputs',
+
+
+  render: function() {
+    return (
+      <div className="inputs">
+        {this.props.children}
+      </div>
+    );
+  }
 
 });
 

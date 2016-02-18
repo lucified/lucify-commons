@@ -4,6 +4,12 @@ var React = require('react');
 
 module.exports = React.createClass({
 
+  displayName: 'MoreInfo',
+
+  propTypes: {
+    initial: React.PropTypes.string
+  },
+
 
   getInitialState: function() {
     return {
@@ -13,7 +19,6 @@ module.exports = React.createClass({
 
 
   onClick: function() {
-    console.log("clicked");
     this.setState({opened: true});
   },
 
@@ -28,6 +33,5 @@ module.exports = React.createClass({
       return <span>{this.props.children}</span>;
     }
   }
-
 
 });

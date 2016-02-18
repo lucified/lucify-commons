@@ -1,6 +1,5 @@
 
 var React = require('react');
-var c3 = require('c3');
 var _ = require('underscore');
 var C3Chart = require('../react-c3/c3-chart.jsx');
 var deepcopy = require('deepcopy');
@@ -9,24 +8,34 @@ var theme = require('../../lucify-theme.jsx');
 
 var C3StackedAreaChart = React.createClass({
 
+  displayName: 'C3StackedAreaChart',
+
+  propTypes: {
+    xVals: React.PropTypes.array,
+    colors: React.PropTypes.arrayOf(React.PropTypes.string),
+    seriesDefs: React.PropTypes.array,
+    spec: React.PropTypes.object,
+    data: React.PropTypes.object
+  },
+
 
   getDataTemplate: function(){
     return {
-        type: "line",
-        x: 'x',
-        columns: [ ['x'].concat(this.props.xVals) ]
+      type: 'line',
+      x: 'x',
+      columns: [['x'].concat(this.props.xVals)]
     };
   },
 
 
   getColors: function(){
-     if (this.props.colors != null) {
-       return this.props.colors;
-     }
+    if (this.props.colors != null) {
+      return this.props.colors;
+    }
 
     if (this.props.seriesDefs.length == 6) {
-       return ['#26a69a', '#80cbc4', '#e0f2f1',
-          '#c5cae9','#7986cb', '#3f51b5'];
+      return ['#26a69a', '#80cbc4', '#e0f2f1',
+        '#c5cae9','#7986cb', '#3f51b5'];
     }
 
     return theme.cyanToGreen8;
@@ -90,7 +99,6 @@ var C3StackedAreaChart = React.createClass({
   render: function(){
     return <C3Chart data={this.getData()} spec={this.getSpec()} />;
   }
-
 
 });
 

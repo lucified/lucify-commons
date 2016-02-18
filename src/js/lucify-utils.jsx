@@ -9,24 +9,25 @@ var createHash = require('sha.js');
 
 
 var isMobile = {
-    Android: function() {
-        return navigator.userAgent.match(/Android/i);
-    },
-    BlackBerry: function() {
-        return navigator.userAgent.match(/BlackBerry/i);
-    },
-    iOS: function() {
-        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-    },
-    Opera: function() {
-        return navigator.userAgent.match(/Opera Mini/i);
-    },
-    Windows: function() {
-        return navigator.userAgent.match(/IEMobile/i);
-    },
-    any: function() {
-        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-    }
+  Android: function() {
+    return navigator.userAgent.match(/Android/i);
+  },
+  BlackBerry: function() {
+    return navigator.userAgent.match(/BlackBerry/i);
+  },
+  iOS: function() {
+    return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+  },
+  Opera: function() {
+    return navigator.userAgent.match(/Opera Mini/i);
+  },
+  Windows: function() {
+    return navigator.userAgent.match(/IEMobile/i);
+  },
+  any: function() {
+    return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() ||
+      isMobile.Opera() || isMobile.Windows());
+  }
 };
 
 
@@ -50,13 +51,13 @@ var getEnvironment = function() {
     return 'prod';
   }
 
-  return "staging";
+  return 'staging';
 };
 
 
 var getEmbedBaseUrl = function() {
   var parsed = url.parse(window.location.href);
-  return parsed.protocol + "//" + parsed.host + "/embed/";
+  return parsed.protocol + '//' + parsed.host + '/embed/';
 };
 
 
@@ -83,21 +84,21 @@ var detectIE = function() {
 
   var msie = ua.indexOf('MSIE ');
   if (msie > 0) {
-      // IE 10 or older => return version number
-      return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+    // IE 10 or older => return version number
+    return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
   }
 
   var trident = ua.indexOf('Trident/');
   if (trident > 0) {
-      // IE 11 => return version number
-      var rv = ua.indexOf('rv:');
-      return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+    // IE 11 => return version number
+    var rv = ua.indexOf('rv:');
+    return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
   }
 
   var edge = ua.indexOf('Edge/');
   if (edge > 0) {
-     // IE 12 => return version number
-     return parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
+    // IE 12 => return version number
+    return parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
   }
 
   // other browser
@@ -127,12 +128,11 @@ var getDelay = function() {
 function decimalPlaces(num) {
   var match = (''+num).match(/(?:\.(\d+))?(?:[eE]([+-]?\d+))?$/);
   if (!match) { return 0; }
-  return Math.max(
-       0,
-       // Number of digits right of decimal point.
-       (match[1] ? match[1].length : 0)
-       // Adjust for scientific notation.
-       - (match[2] ? +match[2] : 0));
+  return Math.max(0,
+    // Number of digits right of decimal point.
+    (match[1] ? match[1].length : 0)
+    // Adjust for scientific notation.
+    - (match[2] ? +match[2] : 0));
 }
 
 
@@ -140,21 +140,17 @@ var formatMoneyToPrecision = function(amount, precision) {
   var value = Number(amount.toPrecision(precision));
 
   return (
-    <span style={{whiteSpace: "nowrap"}}>
-      {accounting.formatMoney(value, "", decimalPlaces(value), " ", ",") + " "}
+    <span style={{whiteSpace: 'nowrap'}}>
+      {accounting.formatMoney(value, '', decimalPlaces(value), ' ', ',') + ' '}
     </span>
   );
 };
 
 
 var formatMoney = function(amount, decimals) {
-  //if (!decimals) {
-  //  decimals = 2;
-  //}
-
   return (
-    <span style={{whiteSpace: "nowrap"}}>
-      {accounting.formatMoney(amount, "", decimals, " ", ",") + " "}
+    <span style={{whiteSpace: 'nowrap'}}>
+      {accounting.formatMoney(amount, '', decimals, ' ', ',') + ' '}
     </span>
   );
 };
@@ -162,7 +158,7 @@ var formatMoney = function(amount, decimals) {
 
 var formatEuro = function(amount, decimals) {
   return (
-    <span style={{whiteSpace: "nowrap"}}>
+    <span style={{whiteSpace: 'nowrap'}}>
       {formatMoney(amount, decimals)}
       {' '}
       &euro;
@@ -172,8 +168,8 @@ var formatEuro = function(amount, decimals) {
 
 
 var removeTrailingSlash = function(path) {
-  var p = path + "";
-  return p.replace(/\/$/, "");
+  var p = path + '';
+  return p.replace(/\/$/, '');
 };
 
 
@@ -186,7 +182,7 @@ var log = function(payload) {
   var url = 'https://tm-prod.appspot.com/api/log?' + queryString.stringify(copy);
   d3.xhr(url)
     .post(null, function(error, response) {
-      // console.log("here");
+      // console.log('here');
     });
 };
 

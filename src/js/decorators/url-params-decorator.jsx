@@ -30,6 +30,8 @@ var decode = function(query) {
 var UrlParamsDecorator = function(Component) {
   return React.createClass({
 
+    displayName: 'UrlParamsDecorator',
+
     getUrlParams: function() {
       return decode(queryString.parse(location.search));
     },

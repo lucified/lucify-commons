@@ -6,6 +6,11 @@ var d3 = require('d3');
 
 module.exports = React.createClass({
 
+  displayName: 'FixedHeightStepperExplanation',
+
+  propTypes: {
+    currentStep: React.PropTypes.number
+  },
 
   mixins: [OnResize],
 
@@ -21,10 +26,11 @@ module.exports = React.createClass({
     var ret = 0;
 
     d3.select(this.getDOMNode())
-      .selectAll(".content")
+      .selectAll('.content')
       .each(function() {
         ret = Math.max(this.getBoundingClientRect().height, ret);
       });
+
     return ret;
   },
 
@@ -50,14 +56,15 @@ module.exports = React.createClass({
     };
 
     return (
-        <div key={step} className="content" style={style}>
-          {this.props.children[step - 1]}
-        </div>
-      );
+      <div key={step} className="content" style={style}>
+        {this.props.children[step - 1]}
+      </div>
+    );
   },
 
 
   getAllContent: function() {
+    // TODO: use React.Children.map
     return this.props.children.map(function(val, i) {
       return this.getContent(i + 1);
     }.bind(this));
@@ -71,6 +78,5 @@ module.exports = React.createClass({
       </div>
     );
   }
-
 
 });

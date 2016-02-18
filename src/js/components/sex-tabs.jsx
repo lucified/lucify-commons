@@ -5,6 +5,12 @@ var Tabs = require('react-simpletabs');
 
 module.exports = React.createClass({
 
+  displayName: 'SexTabs',
+
+  propTypes: {
+    onChange: React.PropTypes.func
+  },
+
 
   getInitialState: function() {
     return {
@@ -15,7 +21,6 @@ module.exports = React.createClass({
   onChange: function(index) {
     this.setState({index: index});
     if (this.props.onChange) {
-      //console.log(this.getPos(index));
       this.props.onChange(this.getPos(index));
     }
   },
@@ -33,32 +38,18 @@ module.exports = React.createClass({
 
 
   render: function() {
-
-    var style = {
-        backgroundColor: "transparent",
-        borderBottom: "1px solid transparent",
-        maxHeight: 12
-    };
-
-    var tabStyle = {
-      color: "black",
-      textAlign: "left",
-      height: 24
-    };
-
     return (
-        <div className="sex-tabs">
-          <div>
-              <Tabs onAfterChange={this.onChange} tabActive={this.state.index}>
-                <Tabs.Panel title="Kaikki"><div /></Tabs.Panel>
-                <Tabs.Panel title="Naiset"><div /></Tabs.Panel>
-                <Tabs.Panel title="Miehet"><div /></Tabs.Panel>
-                <Tabs.Panel title="Looppi"><div /></Tabs.Panel>
-              </Tabs>
-          </div>
+      <div className="sex-tabs">
+        <div>
+          <Tabs onAfterChange={this.onChange} tabActive={this.state.index}>
+            <Tabs.Panel title="Kaikki"><div /></Tabs.Panel>
+            <Tabs.Panel title="Naiset"><div /></Tabs.Panel>
+            <Tabs.Panel title="Miehet"><div /></Tabs.Panel>
+            <Tabs.Panel title="Looppi"><div /></Tabs.Panel>
+          </Tabs>
         </div>
+      </div>
     );
   }
-
 
 });

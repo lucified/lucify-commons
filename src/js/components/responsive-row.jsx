@@ -5,14 +5,16 @@ var ComponentWidthMixin = require('./container-width-mixin.js');
 
 var ResponsiveRow = React.createClass({
 
+  displayName: 'ResponsiveRow',
 
   mixins: [ComponentWidthMixin],
 
 
   renderChildren: function () {
     return React.Children.map(this.props.children, function (child) {
+      // TODO: use React.cloneElement
       return React.addons.cloneWithProps(child, {
-          rowWidth : this.clientWidth
+        rowWidth: this.clientWidth
       });
     }.bind(this));
   },
@@ -22,5 +24,7 @@ var ResponsiveRow = React.createClass({
     return <div>{this.renderChildren()}</div>;
   }
 
-
 });
+
+
+module.exports = ResponsiveRow;

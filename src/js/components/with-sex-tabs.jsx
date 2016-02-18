@@ -9,25 +9,28 @@ module.exports = function(Component, minWidth) {
 
   return bindToSexLoopContext(React.createClass({
 
+    displayName: 'WithSexTabs',
+
+
     render: function() {
 
-        if (!minWidth) {
-          return (
-             <div>
-               <SexTabs onChange={this.props.onSexSelectionChange} />
-               <Component {...this.props} sex={this.props.sex} />
-             </div>
-          );
-        }
-
+      if (!minWidth) {
         return (
           <div>
-            <Hider minWidth={minWidth}>
-              <SexTabs onChange={this.props.onSexSelectionChange} />
-            </Hider>
+            <SexTabs onChange={this.props.onSexSelectionChange} />
             <Component {...this.props} sex={this.props.sex} />
           </div>
         );
+      }
+
+      return (
+        <div>
+          <Hider minWidth={minWidth}>
+            <SexTabs onChange={this.props.onSexSelectionChange} />
+          </Hider>
+          <Component {...this.props} sex={this.props.sex} />
+        </div>
+      );
     }
 
   }));

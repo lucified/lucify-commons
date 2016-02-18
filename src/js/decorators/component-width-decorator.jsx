@@ -1,6 +1,0 @@
-
-var ComponentWidthDecorator = React.createClass({
-
-
-
-});

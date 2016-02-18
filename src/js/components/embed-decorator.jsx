@@ -8,19 +8,24 @@ var ThemeManager = new mui.Styles.ThemeManager();
 var EmbedDecorator = function(Component) {
   return React.createClass({
 
+    displayName: 'EmbedDecorator',
+
+
     getChildContext: function(){
       return {
         embed: true,
-        containerClass: "container-embed",
+        containerClass: 'container-embed',
         muiTheme: ThemeManager.getCurrentTheme()
       };
     },
+
 
     childContextTypes: {
       embed: React.PropTypes.bool,
       muiTheme: React.PropTypes.object,
       containerClass: React.PropTypes.string
     },
+
 
     render: function() {
       return (

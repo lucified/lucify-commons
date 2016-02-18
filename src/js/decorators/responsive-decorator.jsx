@@ -13,23 +13,25 @@ var ComponentWidthMixin = require('lucify-commons/src/js/components/container-wi
 
 module.exports = function(Component) {
 
-	var ResponsiveDecorator = React.createClass({
+  var ResponsiveDecorator = React.createClass({
 
-		mixins: [ComponentWidthMixin],
+    displayName: 'ResponsiveDecorator',
 
-		getWidth: function() {
-			return this.state.componentWidth;
-		},
+    mixins: [ComponentWidthMixin],
 
-		render: function() {
-			return (
-				<div className="responsive-decorator">
-					<Component {...this.props} width={this.getWidth()} />
-				</div>
-			);
-		}
+    getWidth: function() {
+      return this.state.componentWidth;
+    },
 
-	});
+    render: function() {
+      return (
+        <div className="responsive-decorator">
+          <Component {...this.props} width={this.getWidth()} />
+        </div>
+      );
+    }
 
-	return ResponsiveDecorator;
+  });
+
+  return ResponsiveDecorator;
 };

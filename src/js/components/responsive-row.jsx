@@ -24,3 +24,6 @@ var ResponsiveRow = React.createClass({
   }
 
 });
+
+
+module.exports = ResponsiveRow;

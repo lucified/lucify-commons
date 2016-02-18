@@ -12,6 +12,10 @@ var ChartWithExplanation = React.createClass({
 
   displayName: 'ChartWithExplanation',
 
+  propTypes: {
+    children: React.PropTypes.array.isRequired
+  },
+
   mixins: [ ComponentWidthMixin ],
 
 

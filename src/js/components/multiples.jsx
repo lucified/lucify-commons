@@ -5,10 +5,15 @@ var Hider = require('./element-query-hider.jsx');
 
 module.exports = function(ChartComponent, SmallChartComponent) {
 
-  displayName: 'Multiples',
-
-
   return React.createClass({
+
+    displayName: 'Multiples',
+
+    propTypes: {
+      largeCols: React.PropTypes.number,
+      mediumCols: React.PropTypes.number,
+      spec: React.PropTypes.array
+    },
 
 
     getDefaultProps: function() {

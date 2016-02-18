@@ -8,6 +8,9 @@ module.exports = React.createClass({
 
   displayName: 'LinkButton',
 
+  propTypes: {
+    to: React.PropTypes.string
+  },
 
   render: function() {
 

@@ -8,6 +8,14 @@ var Legend = React.createClass({
 
   displayName: 'Legend',
 
+  propTypes: {
+    items: React.PropTypes.array,
+    itemsPerRow: React.PropTypes.number,
+    reverse: React.PropTypes.bool,
+    grid: React.PropTypes.bool,
+    vertical: React.PropTypes.bool
+  },
+
 
   getDefaultProps: function(){
     return {

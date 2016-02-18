@@ -8,6 +8,14 @@ module.exports = React.createClass({
 
   displayName: 'NiceSlider',
 
+  propTypes: {
+    defaultValue: React.PropTypes.number,
+    min: React.PropTypes.number,
+    max: React.PropTypes.number,
+    step: React.PropTypes.number,
+    onChange: React.PropTypes.func
+  },
+
 
   getDefaultProps: function() {
     return {

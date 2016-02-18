@@ -6,6 +6,14 @@ var HideableContainer = React.createClass({
 
   displayName: 'HideableContainer',
 
+  propTypes: {
+    visible: React.PropTypes.bool,
+    delay: React.PropTypes.number,
+    removeFromDOM: React.PropTypes.bool,
+    displayNone: React.PropTypes.bool,
+    heightZero: React.PropTypes.bool
+  },
+
 
   getInitialState: function(){
     return {

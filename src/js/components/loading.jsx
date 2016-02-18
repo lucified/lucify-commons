@@ -8,33 +8,42 @@ var Loading = React.createClass({
 
   displayName: 'Loading',
 
-
-	getDefaultProps: function() {
-		return {
-			progress: null
-		};
-	},
+  propTypes: {
+    progress: React.PropTypes.number
+  },
 
 
-	getPercentage: function() {
-		if (this.props.progress === null) {
-			return null;
-		}
-		return <span className="loading__percentage">({this.props.progress} %)</span>;
-	},
+  getDefaultProps: function() {
+    return {
+      progress: null
+    };
+  },
 
 
-	render: function() {
-		return (
-			<div className="loading">
+  getPercentage: function() {
+    if (this.props.progress === null) {
+      return null;
+    }
+    return (
+      <span className="loading__percentage">
+        ({this.props.progress} %)
+      </span>
+    );
+  },
 
-				 <div className="loading__img">
-				 	<img src={assets.img('loading-spinner.gif')} />
-				 </div>
-				 <div className="loading__text">Loading... {this.getPercentage()}</div>
-			</div>
-		);
-	}
+
+  render: function() {
+    return (
+      <div className="loading">
+        <div className="loading__img">
+          <img src={assets.img('loading-spinner.gif')} />
+        </div>
+        <div className="loading__text">
+          Loading... {this.getPercentage()}
+        </div>
+      </div>
+    );
+  }
 
 });
 

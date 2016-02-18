@@ -7,6 +7,10 @@ module.exports = React.createClass({
 
   displayName: 'SexTabs',
 
+  propTypes: {
+    onChange: React.PropTypes.func
+  },
+
 
   getInitialState: function() {
     return {

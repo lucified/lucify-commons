@@ -8,6 +8,9 @@ module.exports = React.createClass({
 
   displayName: 'FixedHeightStepperExplanation',
 
+  propTypes: {
+    currentStep: React.PropTypes.number
+  },
 
   mixins: [OnResize],
 

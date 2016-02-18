@@ -10,6 +10,10 @@ var SoccerFields = React.createClass({
 
   displayName: 'SoccerFields',
 
+  propTypes: {
+    count: React.PropTypes.number,
+    width: React.PropTypes.number
+  },
 
 	getSoccerFields: function(count) {
 

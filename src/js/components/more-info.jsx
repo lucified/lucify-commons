@@ -6,6 +6,10 @@ module.exports = React.createClass({
 
   displayName: 'MoreInfo',
 
+  propTypes: {
+    initial: React.PropTypes.string
+  },
+
 
   getInitialState: function() {
     return {

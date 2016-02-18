@@ -7,8 +7,16 @@ var TwoResponsiveCols = React.createClass({
 
   displayName: 'TwoResponsiveCols',
 
-    mixins: [ OnResize ],
+  propTypes: {
+    breakPoint: React.PropTypes.number,
+    inverse: React.PropTypes.bool,
+    gapClass: React.PropTypes.string,
+    alignmentClass: React.PropTypes.string,
+    first: React.PropTypes.node,
+    second: React.PropTypes.node
+  },
 
+  mixins: [OnResize],
 
     getInitialState: function() {
       return {componentWidth: 0};

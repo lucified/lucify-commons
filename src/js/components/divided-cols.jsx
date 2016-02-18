@@ -9,6 +9,14 @@ var DividedCols = React.createClass({
 
   displayName: 'DividedCols',
 
+  propTypes: {
+    breakPointStacked: React.PropTypes.number,
+    breakPointNarrow: React.PropTypes.number,
+    inverse: React.PropTypes.bool,
+    alignmentClass: React.PropTypes.string,
+    first: React.PropTypes.node,
+    second: React.PropTypes.node
+  },
 
     mixins: [ ComponentWidthMixin ],
 

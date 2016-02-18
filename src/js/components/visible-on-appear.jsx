@@ -9,6 +9,10 @@ var VisibleOnAppear = React.createClass({
 
   displayName: 'VisibleOnAppear',
 
+  propTypes: {
+    invisibleHeight: React.PropTypes.number
+  },
+
 
   getDefaultProps: function() {
     return {invisibleHeight: 0};

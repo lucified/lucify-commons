@@ -9,6 +9,16 @@ var theme = require('../../lucify-theme.jsx');
 
 var C3StackedAreaChart = React.createClass({
 
+  displayName: 'C3StackedAreaChart',
+
+  propTypes: {
+    xVals: React.PropTypes.array,
+    colors: React.PropTypes.arrayOf(React.PropTypes.string),
+    seriesDefs: React.PropTypes.array,
+    spec: React.PropTypes.object,
+    data: React.PropTypes.object
+  },
+
 
   getDataTemplate: function(){
     return {

@@ -12,6 +12,24 @@ var ComponentWidthMixin = require('../container-width-mixin.js');
 
 var C3Chart = React.createClass({
 
+  displayName: 'C3Chart',
+
+  propTypes: {
+    slowUpdateDebounceTime: React.PropTypes.number,
+    fastUpdateDebounceTime: React.PropTypes.number,
+    slowResizeDebounceTime: React.PropTypes.number,
+    fastResizeDebounceTime: React.PropTypes.number,
+    lineStrokeWidth: React.PropTypes.number,
+    width: React.PropTypes.number,
+    height: React.PropTypes.number,
+    aspectRatio: React.PropTypes.number,
+    ticksFontSize: React.PropTypes.number,
+    yTicksSpacing: React.PropTypes.number,
+    onRendered: React.PropTypes.func,
+    onUpdateData: React.PropTypes.func,
+    spec: React.PropTypes.object,
+    data: React.PropTypes.object
+  },
 
   mixins: [ComponentWidthMixin],
 

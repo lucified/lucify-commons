@@ -8,6 +8,10 @@ var Appear = React.createClass({
 
   displayName: 'Appear',
 
+  propTypes: {
+    onAppear: React.PropTypes.func
+  },
+
   mixins: [OnScroll, OnResize],
 
 

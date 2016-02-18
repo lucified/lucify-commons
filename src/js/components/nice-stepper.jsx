@@ -9,6 +9,13 @@ var NiceStepper = React.createClass({
 
   displayName: 'NiceStepper',
 
+  propTypes: {
+    onChange: React.PropTypes.func,
+    step: React.PropTypes.number,
+    min: React.PropTypes.number,
+    max: React.PropTypes.number
+  },
+
 
   handleNext: function() {
     this.props.onChange(this.props.step + 1);

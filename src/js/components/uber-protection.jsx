@@ -12,6 +12,9 @@ var UberProtection = function(Component, hash) {
 
     displayName: 'UberProtection',
 
+    propTypes: {
+      hash: React.PropTypes.string
+    },
 
 		getDefaultProps: function() {
 			return {

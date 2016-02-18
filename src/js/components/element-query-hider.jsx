@@ -6,6 +6,11 @@ module.exports = React.createClass({
 
   displayName: 'ElementQueryHider',
 
+  propTypes: {
+    minWidth: React.PropTypes.number,
+    maxWidth: React.PropTypes.number
+  },
+
   mixins: [ComponentWidthMixin],
 
 

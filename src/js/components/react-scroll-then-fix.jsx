@@ -6,6 +6,8 @@ var OnResize = require('react-window-mixins').OnResize;
 
 var ScrollThenFix = React.createClass({
 
+  displayName: 'ScrollThenFix',
+
   mixins: [OnResize],
 
 

@@ -8,6 +8,9 @@ var assets = require('../lucify-assets.js');
 
 var SoccerFields = React.createClass({
 
+  displayName: 'SoccerFields',
+
+
 	getSoccerFields: function(count) {
 
 		var imgs = _.range(0, count).map(function(index) {
@@ -33,8 +36,6 @@ var SoccerFields = React.createClass({
 			</div>
 		);
 	},
-
-
 
 
 	getWidth: function() {

@@ -6,7 +6,9 @@ var OnResize = require("react-window-mixins").OnResize;
 
 var Appear = React.createClass({
 
-  mixins: [ OnScroll, OnResize],
+  displayName: 'Appear',
+
+  mixins: [OnScroll, OnResize],
 
 
   componentDidMount: function() {

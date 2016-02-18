@@ -5,6 +5,8 @@ var Hider = require('./element-query-hider.jsx');
 
 module.exports = function(ChartComponent, SmallChartComponent) {
 
+  displayName: 'Multiples',
+
 
   return React.createClass({
 

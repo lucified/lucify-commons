@@ -5,6 +5,8 @@ var Tabs = require('react-simpletabs');
 
 module.exports = React.createClass({
 
+  displayName: 'SexTabs',
+
 
   getInitialState: function() {
     return {

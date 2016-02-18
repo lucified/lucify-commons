@@ -6,6 +6,9 @@ var Link = Router.Link;
 
 module.exports = React.createClass({
 
+  displayName: 'LinkButton',
+
+
   render: function() {
 
     return <Link to={this.props.to}>

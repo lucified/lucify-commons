@@ -9,6 +9,9 @@ module.exports = function(Component, minWidth) {
 
   return bindToSexLoopContext(React.createClass({
 
+    displayName: 'WithSexTabs',
+
+
     render: function() {
 
         if (!minWidth) {

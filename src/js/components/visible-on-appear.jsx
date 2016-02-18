@@ -7,6 +7,8 @@ var HideableContainer = require('./hideable-container.jsx');
 
 var VisibleOnAppear = React.createClass({
 
+  displayName: 'VisibleOnAppear',
+
 
   getDefaultProps: function() {
     return {invisibleHeight: 0};

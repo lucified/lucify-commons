@@ -6,6 +6,8 @@ var assets = require('../lucify-assets.js');
 
 var Loading = React.createClass({
 
+  displayName: 'Loading',
+
 
 	getDefaultProps: function() {
 		return {

@@ -3,6 +3,8 @@ var React = require('react');
 
 var FormRow = React.createClass({
 
+  displayName: 'NiceFormRow',
+
 
   getInput: function() {
     if (this.props.value) {

@@ -5,6 +5,8 @@ var OnResize = require("react-window-mixins").OnResize;
 
 var ContainerWidthMixin = {
 
+  displayName: 'ContainerWidthMixin',
+
   mixins: [ OnResize ],
 
 

@@ -4,6 +4,8 @@ var ComponentWidthMixin = require('./container-width-mixin.js');
 
 module.exports = React.createClass({
 
+  displayName: 'ElementQueryHider',
+
   mixins: [ComponentWidthMixin],
 
 

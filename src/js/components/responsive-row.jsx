@@ -5,6 +5,7 @@ var ComponentWidthMixin = require('./container-width-mixin.js');
 
 var ResponsiveRow = React.createClass({
 
+  displayName: 'ResponsiveRow',
 
   mixins: [ComponentWidthMixin],
 

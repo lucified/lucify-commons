@@ -4,6 +4,8 @@ var classNames = require('classnames');
 
 var HideableContainer = React.createClass({
 
+  displayName: 'HideableContainer',
+
 
   getInitialState: function(){
     return {

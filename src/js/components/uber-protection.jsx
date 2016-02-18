@@ -10,6 +10,9 @@ var UberProtection = function(Component, hash) {
 
 	return React.createClass({
 
+    displayName: 'UberProtection',
+
+
 		getDefaultProps: function() {
 			return {
 				hash: hash

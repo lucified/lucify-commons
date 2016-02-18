@@ -5,6 +5,7 @@ var OnResize = require("react-window-mixins").OnResize;
 
 var TwoResponsiveCols = React.createClass({
 
+  displayName: 'TwoResponsiveCols',
 
     mixins: [ OnResize ],
 

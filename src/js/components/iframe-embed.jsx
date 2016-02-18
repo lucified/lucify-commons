@@ -5,6 +5,8 @@ var iFrameResize = require('./iframe-resize.jsx');
 
 var IFrameEmbed = React.createClass({
 
+  displayName: 'IFrameEmbed',
+
 
   componentDidMount: function() {
     iFrameResize({log: false}, React.findDOMNode(this.refs.iframe));

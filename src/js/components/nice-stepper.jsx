@@ -7,6 +7,8 @@ var NiceButton = require('./nice-button.jsx');
 
 var NiceStepper = React.createClass({
 
+  displayName: 'NiceStepper',
+
 
   handleNext: function() {
     this.props.onChange(this.props.step + 1);

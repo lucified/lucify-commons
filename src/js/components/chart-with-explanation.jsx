@@ -10,6 +10,8 @@ var ComponentWidthMixin = require('lucify-commons/src/js/components/container-wi
 
 var ChartWithExplanation = React.createClass({
 
+  displayName: 'ChartWithExplanation',
+
   mixins: [ ComponentWidthMixin ],
 
 

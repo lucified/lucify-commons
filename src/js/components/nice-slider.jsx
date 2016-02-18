@@ -6,6 +6,8 @@ var noUiSlider = require('./nouislider.js');
 
 module.exports = React.createClass({
 
+  displayName: 'NiceSlider',
+
 
   getDefaultProps: function() {
     return {

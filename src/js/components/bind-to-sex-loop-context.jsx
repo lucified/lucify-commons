@@ -8,6 +8,7 @@ module.exports = function(Component) {
 
   return React.createClass({
 
+    displayName: 'BindToSexLoopContext',
 
     getInitialState: function() {
       return {

@@ -6,6 +6,8 @@ var classNames = require('classnames');
 
 var Legend = React.createClass({
 
+  displayName: 'Legend',
+
 
   getDefaultProps: function(){
     return {

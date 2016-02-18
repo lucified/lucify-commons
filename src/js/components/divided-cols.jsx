@@ -7,6 +7,8 @@ var ComponentWidthMixin = require('./container-width-mixin.js');
 
 var DividedCols = React.createClass({
 
+  displayName: 'DividedCols',
+
 
     mixins: [ ComponentWidthMixin ],
 

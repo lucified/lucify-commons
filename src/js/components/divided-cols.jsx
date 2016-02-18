@@ -1,6 +1,5 @@
 
 var React = require('react');
-var OnResize = require("react-window-mixins").OnResize;
 
 var ComponentWidthMixin = require('./container-width-mixin.js');
 

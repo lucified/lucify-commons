@@ -1,10 +1,8 @@
 
 var React = require('react');
+
 var HideableContainer = require('lucify-commons/src/js/components/hideable-container.jsx');
-
-var OnResize = require("react-window-mixins").OnResize;
 var DividedCols = require('lucify-commons/src/js/components/divided-cols.jsx');
-
 var ComponentWidthMixin = require('lucify-commons/src/js/components/container-width-mixin.js');
 
 

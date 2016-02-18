@@ -1,5 +1,4 @@
 
-var React = require('react');
 var OnResize = require('react-window-mixins').OnResize;
 
 

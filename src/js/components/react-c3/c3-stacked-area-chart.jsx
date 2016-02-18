@@ -1,6 +1,5 @@
 
 var React = require('react');
-var c3 = require('c3');
 var _ = require('underscore');
 var C3Chart = require('../react-c3/c3-chart.jsx');
 var deepcopy = require('deepcopy');

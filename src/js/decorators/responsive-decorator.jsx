@@ -24,6 +24,10 @@ module.exports = function(Component) {
     },
 
     render: function() {
+      if (!this.getWidth()) {
+        return <div />;
+      }
+
       return (
         <div className="responsive-decorator">
           <Component {...this.props} width={this.getWidth()} />

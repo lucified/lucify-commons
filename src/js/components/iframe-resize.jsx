@@ -1,10 +1,22 @@
 
-// This is the iframe-resize implementation
-// originally used by lucify-component-builder
+// This is based on iframe-resizer by David J. Bradshaw
 //
-// Only change is to set factory() to module.exports
-// instead of window.iFrameResize
+// This is the code for resize.js used for many of the embeds.
+// We need to be extra careful when making any changes, as
+// changes can potentially break some existings embeds
+// on 3rd party pages, without us being able to notice.
 //
+
+// Unfortunately the original iframe-resizer implementation
+// relies on the module being loaded only once. To prevent
+// this from complicating things, we store the default export
+// in a global variable in the window object.
+
+if (window._lucifyIFrameResize) {
+  console.log('returning resizer from window object');
+  module.exports = window._lucifyIFrameResize;
+} else {
+
 
 /*
  * File: iframeResizer.js
@@ -638,15 +650,16 @@
     };
   }
 
-  function createJQueryPublicMethod($){
-    $.fn.iFrameResize = function $iFrameResizeF(options) {
-      return this.filter('iframe').each(function (index, element) {
-        setupIFrame.call(element, options);
-      }).end();
-    };
-  }
-
   module.exports = factory();
 
 
-})(window || {});
+  })(window || {});
+
+  // store the export in the window object to allow for
+  // preventing the module from being loaded twice
+  window._lucifyIFrameResize = module.exports;
+}
+
+
+
+
